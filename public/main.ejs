@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./assets/partial_styles/navbar.css">
+        <link rel="stylesheet" href="./assets/partial_styles/sideMenu.css">
+        <link rel="stylesheet" href="./assets/partial_styles/popup.css">
+        <title>BlogSchema</title>
+    </head>
+
+    <body>
+
+        <div class="wrapper">
+
+            <%- include('./assets/partial_ejs/navbar.ejs')%> 
+
+            <%- include('./assets/partial_ejs/sideMenu.ejs')%> 
+    
+            <section class="main-section">
+
+                <%- include('./assets/partial_ejs/logout_popup.ejs') %> 
+
+                <div class="blog-list">
+                    <% if(blogs.length === 0){ %>
+                        <div class="no-blogs">
+                            <h3>No blogs to show</h3>
+                        </div>
+                    <% }else{ %>
+                        <% blogs.forEach(blog => {%>
+                            <div class="blog-link">
+                                <a href="/viewBlog/<%= blog._id %>" class="view-blog link">
+                                    <div class="one-blog" id="oneBlog">
+                                        <h3><%= blog.title %> </h3>
+                                        <span><%= blog.snippet %> </span>
+                                        <small><%= blog.date %> </small>
+                                        <small><%= blog.time %> </small>
+                                    </div>
+                                </a>
+                            </div>
+                        <% }) %>
+                    <% } %>
+                </div>
+    
+            </section>
+
+        </div>
+
+    </body>
+
+    <script src="./javascript/pageDirect.js"></script>
+    <script src="./javascript/filter.js"></script>
+    <script src="./javascript/animation.js"></script>
+    <script src="./javascript/confirmation.js"></script>
+
+</html>

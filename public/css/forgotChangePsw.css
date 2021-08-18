@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(340deg, rgb(0, 0, 0) 0%, rgb(104, 112, 112) 12%,rgb(255, 255, 255) 60%);
+    height: 100vh;
+    text-align: center;
+}
+
+.content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.container{
+    padding: 10px;
+    margin: 10px;
+    margin-top: 50px;
+    height: 100%;
+    position: relative;
+}
+
+.container h1{
+    position: absolute;
+    top: 240px;
+    left: 100px;
+    margin: 0;
+    height: 70px;
+    font-size: 50px;
+    color: rgb(20, 4, 255);
+}
+
+/*effect-underline*/
+.container h1:after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 0;
+    display: inline-block;
+    height: 1em;
+    width: 100%;
+    border-bottom: 3px solid rgb(20, 4, 255);
+    opacity: 0;
+    -webkit-transition: opacity 0.7s, -webkit-transform 0.7s;
+    transition: opacity 0.7s, transform 0.7s;
+    -webkit-transform: scale(0,1);
+    transform: scale(0,1);
+}
+
+.container h1:hover:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+/*  */
+
+.container h3{
+    position: absolute;
+    top: 310px;
+    left: 100px;
+}
+
+.box{
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    height: 515px;
+    width: 550px;
+    padding: 40px;
+    border-radius: 60px;
+    background-color: rgba(154, 168, 197, 0.445);
+}
+
+.forgotPswChangeImg{
+    height: 80px;
+    width: 80px;
+}
+
+h2{
+    color: rgb(20, 4, 255);
+}
+
+/*label animation */
+
+.form-control{
+    position: relative;
+    margin-top: 5px;
+    padding: 11px 0;
+}
+
+.form-control input{
+    font-size: 13px;
+    color: white;
+    width: 80%;
+    height: 35px;
+    margin: 0 auto;
+    margin-bottom: 3px;
+    padding-left: 10px;
+    border: 3px solid rgb(20, 4, 255);
+    border-radius: 17px;
+    display: block;
+    outline: none;
+    background: transparent;
+    transition: all 0.5s;
+    position: relative;
+}
+
+.form-control input:-webkit-autofill { 
+    -webkit-background-clip: text;
+}
+
+.form-control input:focus{
+    box-shadow: none;
+    outline: none;
+    border-color: rgb(0, 21, 143);
+    background-color: #563ce763;
+}
+
+.form-control input::placeholder{
+    color: transparent;
+}
+
+.form-control .form-label{
+    color: rgb(20, 4, 255);
+    font-size: 15px;
+    position: absolute;
+    left: 60px;
+    bottom: -10px;
+    transform: translateY(-2.0em);
+    transform-origin: 0 0;
+    transition: all 0.5s;
+}
+
+.form-control input:focus + .form-label,
+.form-control input:not(:placeholder-shown) + .form-label,
+.form-control input:-webkit-autofill + .form-label{
+    transform: translateY(-3.8em) scale(0.8);
+    color: rgb(20, 4, 255);
+}
+
+/* end */
+
+/* <i> icons and errors */
+
+.input-icon{
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    left: 18px;
+    bottom: 22px;
+}
+
+.form-control{
+    position: relative;
+}
+
+.form-control.success input{
+    border-color: #2ecc71;
+    background-color: #2ecc7057;
+}
+
+.form-control.error input{
+    border-color: #e74c3c;
+    background-color: #e74d3c59;
+}
+
+.form-control i{
+    position: absolute;
+    bottom: 23px;
+    visibility: hidden;
+}
+
+.form-control .fa{
+    right: 25px;
+}
+
+.form-control small{
+    visibility: hidden;
+    position: absolute;
+    bottom: -10px;
+    right: 30px;
+}
+
+/* .form-control a{
+    visibility: hidden;
+    position: absolute;
+    bottom: -5px;
+    right: -20px;
+} */
+
+.form-control.success i.fa-check-circle{
+    visibility: visible;
+    color: #2ecc71;
+}
+
+.form-control.error i.fa-exclamation-circle{
+    visibility: visible;
+    color: #e74c3c;
+}
+
+.form-control i.far{
+    z-index: 10;
+    right: 55px;
+    bottom: 23px;
+    color: black;
+    cursor: pointer;
+    visibility: visible;
+}
+
+.form-control.error small{
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.form-control .ver-error{
+    color: #563ce7;
+    visibility: visible;
+}
+/* end */
+
+.form-btn{
+    position: relative;
+}
+
+#forgotChangePswSubmit{
+    width: 60%;
+    height: 60px;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: 25px auto;
+    background: rgb(20, 4, 255);
+    color: white;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    font-size: large;
+    transition: all 0.5s ease-in;
+}
+
+#forgotChangePswSubmit:hover{
+    background: rgb(15, 7, 131);
+}
+
+/* loading spinner */
+.submit-btn span{
+    visibility: visible;
+    transition: all 0.2s;
+    position: absolute;
+    bottom: 15px;
+    right: 200px;
+}
+
+/* .lds-ring{
+    visibility: hidden;
+    z-index: 100;
+    position: absolute;
+}
+
+.loading span{
+    visibility: hidden;
+}
+
+.loading .lds-ring{
+    visibility: visible;
+} */
+
+/*  */
+

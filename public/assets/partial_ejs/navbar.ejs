@@ -1,0 +1,61 @@
+<nav class="navbar">
+
+    <div class="side-menu-open">
+        <div class="proPic-div-small" id="proPicDiv" onclick="openNav()">
+            <img src="/getProfilePic" alt="profile_pic" class="proPic-small">
+        </div>
+    </div>
+
+    <div class="header">
+        <h1>#BlogSchema...</h1>
+        <h4><%= user.Username%></h4>
+    </div>
+
+    <div class="search-box">
+        <input class="search-txt" type="text" placeholder="search here..." id="searchTxt">
+        <a class="search-btn" href="#">
+            <i class="fas fa-search"></i>
+        </a>
+        <div class="filter-check">
+            <span>Filter by : </span>
+            <input type="checkbox" name="byTitle" id="filterByTitle" class="check title" checked>
+            <label for="byTitle" class="label">Title</label>
+            <input type="checkbox" name="bySnippet" id="filterBySnippet" class="check snippet">
+            <label for="bySnippet" class="label">Snippet</label>
+        </div>
+    </div>
+
+    <div class="nav-list">
+
+        <div class="ul">
+
+            <!-- <li><a href="/main" class="navItem main">Home</a></li>
+            <li><a href="/myBlogs" class="navItem my-blogs">My Blogs</a></li>
+            <li><a href="/newBlog" class="navItem newBlog">New Blog</a></li>
+            <li><a href="/about" class="navItem about">about</a></li> -->
+
+            <a href="/main" class="navItem main">
+                <img src="../../resources/home-solid.svg" alt="home icon toolTip" class="navIcon home">
+                <span class="toolTipText">Home</span>
+            </a>
+
+            <a href="/myBlogs" class="navItem my-blogs">
+                <img src="../../resources/myBlogsIcon.svg" alt="myBlogs icon toolTip" class="navIcon myBlogs">
+                <span class="toolTipText">My Blogs</span>
+            </a>
+
+            <a href="/newBlog" class="navItem newBlog">
+                <img src="../../resources/plus-solid.svg" alt="newBlog icon toolTip" class="navIcon newBlog">
+                <span class="toolTipText">New Blog</span>
+            </a>
+
+            <a href="/about" class="navItem about">
+                <img src="../../resources/aboutUsIcon.png" alt="aboutUs icon toolTip" class="navIcon aboutUs">
+                <span class="toolTipText">About Us</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>

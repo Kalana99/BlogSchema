@@ -1,0 +1,33 @@
+<div id="mySidenav" class="sidenav">
+
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+    <a href="/editProfile" class="sideLink editProfile">
+        <img src="../../resources/user-cog-solid.svg" alt="editProfile icon toolTip" class="sideIcon editProfile">
+        <span class="toolTipTextSide">Edit Profile</span>
+    </a>
+
+    <div class="proPic-div large">
+        <img class="proPic-large" src="/getProfilePic" alt="profile_pic"/>
+        <div class="editProfilePic" onclick="editProfilePic()">
+            <i class="fa fa-camera" aria-hidden="true"></i>
+        </div>
+        <form class="form" action="/EditProfilePic" method="POST" autocomplete="off" enctype="multipart/form-data" id="EditProfilePicForm">
+            <!-- this is hidden by styles in popup.css -->
+            <input type="file" accept="image/*" name="uploadedFile" class="fileEditProfile" id="fileItem"/>
+        </form>
+    </div>
+
+    <div class="details">
+        <span><%= user.Username%></span>
+        <span><%= user.email%></span>
+    </div>
+
+    <div class="logout-button">
+        <button id="logout-popup" class="logout-popup" onclick="toggleActive()">
+            <img src="../../resources/power-off-solid.svg" alt="logout icon toolTip" class="sideIcon logout">
+            <span>logout</span>
+        </button>
+    </div>
+    
+</div>

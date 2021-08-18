@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/viewBlog.css">
+        <link rel="stylesheet" href="/assets/partial_styles/navbar.css">
+        <link rel="stylesheet" href="/assets/partial_styles/sideMenu.css">
+        <link rel="stylesheet" href="/assets/partial_styles/popup.css">
+        <title>Blog View</title>
+    </head>
+
+    <body>
+
+        <div class="wrapper">
+
+            <%- include('./assets/partial_ejs/navbar.ejs')%>
+
+            <%- include('./assets/partial_ejs/sideMenu.ejs')%> 
+
+            <section class="main-section">
+
+                <%- include('./assets/partial_ejs/logout_popup.ejs') %> 
+
+                <%- include('./assets/partial_ejs/deleteBlog_popup.ejs') %>
+    
+                <header>
+                    <h1 class="title"><%= blog.title %></h1>
+                    <h3 class="snippet"><%= blog.snippet %></h3>
+                    <span class="author"><%= author.Username %></span>
+                    <span class="create_date"><%= blog.date %></span>
+                    <span class="create_time"><%= blog.time %></span>
+                </header>
+                
+                <div class="blogContent">
+                    <p><%= blog.content %></p>
+                </div>
+                
+                <div class="blogBtn">
+                    <!-- <a href="/editBlog/<%= //blog._id %>">edit</a> -->
+                    <button id="editBlog-popup" class="editBlog-popup" onclick="getEditWindow()">
+                        <span>Edit</span>
+                    </button>
+                    <!-- <a href="/deleteBlog/<%= //blog._id %>">delete</a> -->
+                    <button id="deleteBlog-popup" class="deleteBlog-popup" onclick="toggleActive()">
+                        <span>Delete</span>
+                    </button>
+                </div>
+    
+            </section>
+
+        </div>
+        
+    </body>
+
+    <script src="/javascript/pageDirect.js"></script>
+    <script src="/javascript/animation.js"></script>
+    <script src="/javascript/confirmation.js"></script>
+</html>

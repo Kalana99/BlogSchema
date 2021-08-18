@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/editBlog.css">
+        <link rel="stylesheet" href="/assets/partial_styles/navbar.css">
+        <link rel="stylesheet" href="/assets/partial_styles/sideMenu.css">
+        <link rel="stylesheet" href="/assets/partial_styles/popup.css">
+        <title>BlogSchema</title>
+    </head>
+
+    <body>
+
+        <div class="wrapper">
+
+            <%- include('./assets/partial_ejs/navbar.ejs')%>
+
+            <%- include('./assets/partial_ejs/sideMenu.ejs')%>
+    
+            <section class="main-section">
+
+                <%- include('./assets/partial_ejs/logout_popup.ejs') %> 
+
+                <form class="editBlog-form" autocomplete="off" enctype="multipart/form-data" id="editBlogForm">
+                    
+                    <div class="form-control">
+                        <label for="blog_title" class="form-label blog_title">Blog Title :</label>
+                        <input type="text" name="blog_title" placeholder="Blog Title :" class="normal blog_title newBlog" id="title">
+                    </div>
+
+                    <div class="form-control">
+                        <label for="blog_snippet" class="form-label blog_snippet">Snippet :</label>
+                        <input type="text" name="blog_snippet" placeholder="Snippet :" class="normal blog_snippet newBlog" id="snippet">
+                    </div>
+
+                    <div class="form-control text-area">
+                        <label for="blog_content" class="form-label blog_content">Content :</label>
+                        <textarea name="blog_content" id="blog_content" class="normal blog_content newBlog" placeholder="Content..." cols="40" rows="15"></textarea>
+                        <!-- <i class="fa fa-check-circle editBlog"></i>
+                        <i class="fa fa-exclamation-circle editBlog"></i>
+                        <small class="editBlog-small">Error message</small> -->
+                    </div>
+
+                    <div class="blog-submit">
+
+                        <button class="editBlog submit-btn button" id="editBlogSubmit">
+                            <span class="btn-text">Save</span>
+                        </button>
+
+                        <!-- <button class="editBlog preview button" id="newBlogPreview">
+                            <span class="btn-text">Preview</span>
+                        </button> -->
+
+                        <a class="editBlog cancel button" href="/main" id="cancelBtn">Cancel</a>
+                        
+                    </div>
+
+                </form>
+    
+            </section>
+
+        </div>
+
+    </body>
+
+    <script>
+        if(window.sessionStorage.length > 0){
+
+            document.getElementById('title').value = window.sessionStorage.title;
+            document.getElementById('snippet').value = window.sessionStorage.snippet;
+            document.getElementById('blog_content').value = window.sessionStorage.content;
+
+            let form = document.getElementById('editBlogForm');
+            form.setAttribute('action', '/editBlog');
+            form.setAttribute('method', 'POST');
+
+            let saveBtn = document.getElementById('editBlogSubmit');
+            saveBtn.children[0].innerText = "Save as new";
+
+            let updateBtn = document.createElement('button');
+            updateBtn.setAttribute('class', 'editBlog update-btn button');
+            updateBtn.setAttribute('id', 'editBlogUpdate')
+            updateBtn.setAttribute('onclick', 'toggleEdit()');
+            updateBtn.innerHTML = '<span class="btn-text">Update</span>';
+
+            let div = document.querySelector('.blog-submit');
+
+            div.insertBefore(updateBtn, div.childNodes[2]);
+
+            let cancel = document.getElementById('cancelBtn');
+            cancel.setAttribute('href', '/viewMyBlog/' + window.sessionStorage.blogId);
+
+            // let preview = document.getElementById('newBlogPreview');
+            // preview.setAttribute('id', 'editBlogPreview');
+
+            sessionStorage.clear();
+        }
+
+        function toggleEdit(){
+            // let form = document.getElementById('editBlogForm');
+            // form.setAttribute('action', '/editBlog');
+            // form.setAttribute('method', 'POST');
+
+            let inputs = document.querySelectorAll('.normal');
+            for(let i = 0; i < inputs.length; i++){
+                inputs[i].classList.remove('newBlog');
+                inputs[i].classList.add('editBlog');
+            }
+        }
+
+    </script>
+
+    <script src="/javascript/pageDirect.js"></script>
+    <script src="/javascript/animation.js"></script>
+    <script src="/javascript/confirmation.js"></script>
+</html>

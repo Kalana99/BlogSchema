@@ -1,0 +1,120 @@
+.popup-window .overlay {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100vw;
+    height:100vh;
+    background:rgba(0,0,0,0.7);
+    z-index:5;
+    display: none;
+}
+  
+.popup-window h1{
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0;
+    top: 0;
+    left: 0;
+    font-family: monospace;
+    color: grey;
+}
+  
+.popup-window .content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);  
+    background: #fff;
+    width: 600px;
+    height: 410px;
+    z-index: 6;
+    text-align:center;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: monospace;
+    border-radius: 10px;
+    align-self: center;
+}
+  
+.popup-window .close-btn {
+    cursor:pointer;
+    position:absolute;
+    right:20px;
+    top:20px;
+    width:30px;
+    height:30px;
+    background: transparent;
+    color: black;
+    font-size:25px;
+    font-weight:600;
+    line-height:30px;
+    text-align:center;
+    border: none;
+}
+  
+.submit{
+    border: 1px solid #49798c;
+    border-radius: 10px;
+    display: inline-block;
+    font-size: 18px;
+    padding: 15px;
+    width: 80%;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(to right, #84d9d2, #07cdae);
+    opacity: 2;
+    color: white;
+    outline-style: none;
+    position: relative;
+}
+  
+.submit:hover{
+    background: linear-gradient(to right, #07cdae, #84d9d2);
+}
+  
+.submit:active{   
+    background: linear-gradient(to right, #324c4a, #08ddbc);
+}
+  
+.popup-window.active .overlay {
+    display: block;
+}
+  
+.popup-window.active .content {
+    transition:all 300ms ease-in-out;
+    transform:translate(-50%,-50%) scale(1);
+}
+  
+.popup-window .closeBtn {
+    cursor: pointer;
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 20px;
+    height: inherit;
+    background: white;
+    color: black;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 30px;
+    text-align:center;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+  
+  /* overide styles for logout window */
+.confirm .content,
+.logout .content,
+.deleteBlog .content{
+    width: 350px;
+    height: 200px;
+}
+.confirm .content h1,
+.logout .content h1,
+.deleteBlog .content h1{
+    margin-bottom: 60px;
+}

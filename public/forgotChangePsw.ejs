@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        <link rel="stylesheet" href="./css/forgotChangePsw.css">
+        <title>Change Password</title>
+    </head>
+
+    <body>
+
+        <div class="content" id="content">
+            
+            <div class="title container">
+
+                <h1>#BlogSchema</h1>
+                <h3>Express yourself in style...</h3>
+    
+            </div>
+
+            <div class="form container">
+
+                <div class="box">
+
+                    <img src="./resources/forgotPswChange.png" alt="forgotPswChange icon" class="forgotPswChangeImg">
+                    <h2>Restore password...</h2>
+                    <p>Enter and confirm a new password</p>
+        
+                    <form action="changePassword" class="form" id="form">
+        
+                        <div class="form-control">
+                            <img src="./resources/unlock-alt-solid.svg" alt="lock icon" class="input-icon">
+                            <input type="password" name="new_password" class="newPassword forgotChangePsw psw" id="new_password" placeholder="New Password :">
+                            <label for="password" class="form-label">New Password :</label>
+                            <i class="far fa-eye" id="togglePassword"></i>
+                            <i class="fa fa-check-circle"></i>
+                            <i class="fa fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                
+                        <div class="form-control">
+                            <img src="./resources/unlock-alt-solid.svg" alt="lock icon" class="input-icon">
+                            <input type="password" name="confirm_password" class="newPassword forgotChangePsw confirm" id="confirm_password" placeholder="Confirm Password :">
+                            <label for="confirmPassword" class="form-label">Confirm Password :</label>
+                            <i class="far fa-eye" id="togglePassword"></i>
+                            <i class="fa fa-check-circle"></i>
+                            <i class="fa fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                
+                        <div class="form-btn">
+                            <button type="button" id="forgotChangePswSubmit" class="button submit-btn forgotChangePswSubmit">
+                                <span class="btn text">Save</span>
+                            </button>
+                        </div>
+                
+                    </form>
+
+                </div>
+    
+            </div>
+
+        </div>
+
+    </body>
+
+    <script src="./javascript/pageDirect.js"></script>
+    <script src="javascript/animation.js"></script>
+
+</html>

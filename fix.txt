@@ -1,0 +1,19 @@
+viewing my blogs from home
+profile pic
+titles of each page
+styles - all
+verLink styles - login
+prevent multiple pin input fields - forgotPsw
+
+
+###############
+imag crop
+remove proPic
+strong password
+send pin again
+send mail again set timeout
+text editor
+404 with home redirect
+account delete
+preview - editBlog
+title logo

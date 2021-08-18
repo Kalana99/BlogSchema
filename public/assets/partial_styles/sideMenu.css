@@ -1,0 +1,122 @@
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(102, 94, 94);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    align-content: center;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #818181;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    left: -60px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sideLink{
+    color: #f1f1f1;
+}
+
+.sideIcon{
+    height: 30px;
+    width: 30px;
+    color: #f1f1f1;
+}
+
+.toolTipTextSide{
+    color: #f1f1f1;
+}
+
+.proPic-div{
+    margin: 0 auto;
+    padding: 5px;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    text-align: center;
+    z-index: 10;
+    background-color: #f1f1f1;
+}
+
+.proPic-large{
+    height: 90px;
+    width: 90px;
+}
+
+
+/* editProfilePic icon */
+.large .editProfilePic{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid rgb(255, 255, 255);
+    background: #fff;
+    font-size: 1.5rem;
+    left: 60%;
+    top: 130px;
+    cursor: pointer;
+    display: none;
+    opacity: 0.8;
+}
+.large .editProfilePic i{
+    position: relative;
+    top: 33%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+}
+  
+.large:hover .editProfilePic{
+    display: block;
+}
+
+/*  */
+
+/* editProfilePic input */
+.fileEditProfile{
+	opacity: 0;
+    top: 0;
+    left: 0;
+    width: 0.1px;
+    height: 0.1px;
+    overflow: hidden;
+	position: absolute;
+    pointer-events: none;
+}
+
+/*  */
+
+.details{
+    color: #f1f1f1;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}

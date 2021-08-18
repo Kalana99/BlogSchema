@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="assets/partial_styles/loader.css">
+        <title>#BlogSchema...</title>
+    </head>
+
+    <body>
+
+        <div class="content" id="content">
+
+            <div class="title container">
+
+                <h1>#BlogSchema</h1>
+                <h3>Express yourself in style...</h3>
+    
+            </div>
+    
+            <div class="form container">
+    
+                <div class="login-div wrapper active">
+                    <form action="/login" method="POST" class="login-form" autocomplete="off" enctype="multipart/form-data" id="loginForm">
+                        
+                        <div class="form-control">
+                            <img src="./resources/envelope-solid.svg" alt="mail icon" class="input-icon">
+                            <input type="text" placeholder="E-mail :" class="existingEmail login">
+                            <label for="email" class="form-label">E-mail :</label>
+                            <i class="fa fa-check-circle login"></i>
+                            <i class="fa fa-exclamation-circle login"></i>
+                            <small class="login-small">Error message</small>
+                            <a></a>
+                        </div>
+                        <div class="form-control">
+                            <img src="./resources/unlock-alt-solid.svg" alt="lock icon" class="input-icon">
+                            <input type="password" placeholder="Password :" class="existingPassword login">
+                            <label for="password" class="form-label">Password :</label>
+                            <i class="far fa-eye login" id="togglePassword"></i>
+                            <i class="fa fa-check-circle login"></i>
+                            <i class="fa fa-exclamation-circle login"></i>
+                            <small class="login-small">Error message</small>
+                        </div>
+                        <div class="form-submit">
+
+                            <button class="login submit-btn button" id="loginSubmit">
+                                <div class="lds-ring">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <span class="btn text">LogIn</span>
+                            </button> 
+                            
+                        </div>
+                        <div class="login forgotPasword">
+                            <a href="/forgotPsw" class="forgotPasword">Forgot your password?</a>
+                        </div>
+                    </form>
+                </div>
+    
+                <div class="signUp-div wrapper inactive">
+                    <form class="signUp-form" action="/signUp" method="POST" autocomplete="off" enctype="multipart/form-data" id="signUpForm">
+    
+                        <div class="form-control">
+                            <img src="./resources/user-solid.svg" alt="user icon" class="input-icon">
+                            <input type="text" name="Username" placeholder="Username:" class="nonEmpty signUp Username">
+                            <label for="Username" class="form-label">Username :</label>
+                            <i class="fa fa-check-circle signUp"></i>
+                            <i class="fa fa-exclamation-circle signUp"></i>
+                            <small class="signUp-small">Error message</small>
+                        </div>
+    
+                        <div class="form-control">
+                            <img src="./resources/envelope-solid.svg" alt="mail icon" class="input-icon">
+                            <input type="text" name="email" placeholder="E-mail:" class="newEmail signUp">
+                            <label for="email" class="form-label">E-mail :</label>
+                            <i class="fa fa-check-circle signUp"></i>
+                            <i class="fa fa-exclamation-circle signUp"></i>
+                            <small class="signUp-small">Error message</small>
+                        </div>
+    
+                        <div class="form-control">
+                            <img src="./resources/unlock-alt-solid.svg" alt="lock icon" class="input-icon">
+                            <input type="password" name="password" placeholder="Password:" class="newPassword signUp">
+                            <label for="password" class="form-label">Password :</label>
+                            <i class="far fa-eye signUp" id="togglePassword"></i>
+                            <i class="fa fa-check-circle signUp"></i>
+                            <i class="fa fa-exclamation-circle signUp"></i>
+                            <small class="signUp-small">Error message</small>
+                        </div>
+    
+                        <div class="form-control">
+                            <img src="./resources/unlock-alt-solid.svg" alt="lock icon" class="input-icon">
+                            <input type="password" name="confirmPsw" placeholder="Confirm Password:" class="newPassword signUp confirm">
+                            <label for="confirmPassword" class="form-label">Confirm Password :</label>
+                            <i class="far fa-eye" id="toggleConfirmPassword"></i>
+                            <i class="fa fa-check-circle signUp"></i>
+                            <i class="fa fa-exclamation-circle signUp"></i>
+                            <small class="signUp-small">Error message</small>
+                        </div>
+    
+                        <div class="form-submit">
+                            <button class="signUp submit-btn button" id="signUpSubmit" type="button">
+                                <div class="lds-ring">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <span class="btn text">SignUp</span>
+                            </button>
+                        </div>
+    
+                    </form>
+                </div>
+                
+                <div class="form-btn">
+                    <div id="btn"></div>
+                    <button onclick="loginForm_get()" class="toggle-btn login">LogIn</button>
+                    <button onclick="signUpForm_get()" class="toggle-btn signUp">SignUp</button>
+                </div>
+    
+            </div>
+
+        </div>
+
+        <footer>
+
+            <!-- <div class="bottom">
+        
+                <a href="/about" class="about bottomItem">About</a>
+    
+            </div> -->
+            
+        </footer>
+
+    </body>
+
+    <script src="javascript/pageDirect.js"></script>
+    <script src="javascript/animation.js"></script>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./css/settings.css">
+        <link rel="stylesheet" href="./assets/partial_styles/navbar.css">
+        <link rel="stylesheet" href="./assets/partial_styles/sideMenu.css">
+        <link rel="stylesheet" href="./assets/partial_styles/popup.css">
+        <!-- <link rel="stylesheet" href="assets/partial_styles/loader.css"> -->
+        <title>Settings</title>
+    </head>
+
+    <body>
+        <div class="wrapper">
+
+            <nav class="navbar">
+
+                <!-- <img src="#" alt="Profile picture" class="profile pic small"> -->
+                <span onclick="openNav()" class="side-menu-open">&#62;</span>
+                
+                <div class="header">
+                    <h1>#BlogSchema...</h1>
+                </div>
+            
+                <!-- <div class="search-bar">
+                    <input type="text" placeholder="Search.." class="searchBlog">
+                    <button type="button" class="searchBtn">Search</button>
+                </div> -->
+            
+                <div class="nav-list">
+            
+                    <ul>
+            
+                        <li class="active"><a href="/main" class="navItem main">Home</a></li>
+                        <li><a href="/myBlogs" class="navItem my-blogs">My Blogs</a></li>
+                        <li><a href="/newBlog" class="navItem newBlog">New Blog</a></li>
+                        <!-- <li><a href="/settings" class="navItem settings">Settings</a></li> -->
+                        <li><a href="/about" class="navItem about">about</a></li>
+            
+                    </ul>
+            
+                </div>
+            
+            </nav>
+
+            <%- include('./assets/partial_ejs/sideMenu.ejs')%>
+
+            <section class="main-section">
+
+                <%- include('./assets/partial_ejs/logout_popup.ejs') %>
+
+                <form class="editProfile-form" action="/editProfile" method="POST" autocomplete="off" enctype="multipart/form-data" id="editProfileForm">
+                    
+                    <div class="form-control">
+                        <input type="text" name="Username" placeholder="Username:" class="editNormal editProfile Username">
+                    </div>
+
+                    <div class="form-control">
+                        <input type="text" name="email" placeholder="E-mail:" class="editEmail editProfile">
+                        <i class="fa fa-check-circle editProfile"></i>
+                        <i class="fa fa-exclamation-circle editProfile"></i>
+                        <small class="editProfile-small">Error message</small>
+                    </div>
+
+                    <div class="form-control">
+                        <input type="password" name="password" placeholder="Password:" class="editPassword editProfile">
+                        <i class="far fa-eye editProfile" id="togglePassword"></i>
+                        <i class="fa fa-check-circle editProfile"></i>
+                        <i class="fa fa-exclamation-circle editProfile"></i>
+                        <small class="editProfile-small">Error message</small>
+                    </div>
+
+                    <div class="form-control">
+                        <input type="password" name="confirmPsw" placeholder="Confirm Password:" class="editPassword editProfile confirm">
+                        <i class="far fa-eye" id="toggleConfirmPassword"></i>
+                        <i class="fa fa-check-circle editProfile"></i>
+                        <i class="fa fa-exclamation-circle editProfile"></i>
+                        <small class="editProfile-small">Error message</small>
+                    </div>
+
+                    <div class="form-submit">
+                        <button class="editProfile submit-btn button" id="editProfileSubmit" type="button">
+                            <div class="lds-ring">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <span class="btn text">Save</span>
+                        </button>
+                    </div>
+
+                </form>
+    
+            </section>
+
+        </div>
+
+    </body>
+
+    <script src="./javascript/pageDirect.js"></script>
+    <script src="./javascript/animation.js"></script>
+    <script src="./javascript/confirmation.js"></script>
+</html>

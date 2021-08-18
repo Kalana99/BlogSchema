@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/myBlogs.css">
+        <link rel="stylesheet" href="./assets/partial_styles/navbar.css">
+        <link rel="stylesheet" href="./assets/partial_styles/sideMenu.css">
+        <link rel="stylesheet" href="./assets/partial_styles/popup.css">
+        <title>My Blogs</title>
+    </head>
+
+    <body>
+        <div class="wrapper">
+
+            <%- include('./assets/partial_ejs/navbar.ejs')%>
+
+            <%- include('./assets/partial_ejs/sideMenu.ejs')%>
+
+            <section class="main-section">
+
+                <%- include('./assets/partial_ejs/logout_popup.ejs') %> 
+
+                <div class="blog-list">
+                    <% if(myBlogs.length === 0){ %>
+                        <div class="blog-link">
+                            <h3>No blogs to show</h3>
+                        </div>
+                    <% }else{ %>
+                        <% myBlogs.forEach(blog => {%>
+                            <div class="blog-link">
+                                <a href="/viewMyBlog/<%= blog._id %>" class="view-blog link">
+                                    <div class="one-blog" id="oneBlog">
+                                        <h3><%= blog.title %> </h3>
+                                        <span><%= blog.snippet %> </span>
+                                        <small><%= blog.date %> </small>
+                                        <small><%= blog.time %> </small>
+                                    </div>
+                                </a>
+                            </div>
+                        <% }) %>
+                    <% } %> 
+                </div>
+    
+            </section>
+
+        </div>
+
+    </body>
+
+    <!-- <script src="./javascript/pageDirect.js"></script> -->
+    <script src="./javascript/filter.js"></script>
+    <script src="./javascript/animation.js"></script>
+    <script src="./javascript/confirmation.js"></script>
+</html>

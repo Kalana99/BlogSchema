@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./css/forgotPsw.css">
+
+        <title>Forgot Password!</title>
+    </head>
+
+    <body>
+
+        <div class="content" id="content">
+
+            <div class="title container">
+
+                <h1>#BlogSchema</h1>
+                <h3>Express yourself in style...</h3>
+    
+            </div>
+
+            <div class="form container">
+
+                <div class="box">
+
+                    <img src="./resources/forgotPsw.png" alt="forgotPsw icon" class="forgotPswImg">
+                    <h2>Enter your email and submit to verify your identity</h2>
+                    <p>6-digit pin will be sent your email</p>
+        
+                    <form class="forgotPsw form" id="forgotPswForm">
+        
+                        <div class="form-control">
+                            <img src="./resources/envelope-solid.svg" alt="mail icon" class="input-icon">
+                            <input type="text" name="email" placeholder="E-mail:" class="forgotPswEmail forgotPsw">
+                            <label for="email" class="form-label">E-mail :</label>
+                            <i class="fa fa-check-circle signUp"></i>
+                            <i class="fa fa-exclamation-circle signUp"></i>
+                            <small class="signUp-small">Error message</small>
+                        </div>
+        
+                        <div class="form-btn">
+                            <button id="forgotPswSubmit" class="forgotPsw submit-btn button" type="button">
+                                <div class="lds-ring">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <span class="btn text">Submit</span>
+                            </button>
+                        </div>
+        
+                    </form>
+
+                </div>
+    
+            </div>
+
+        </div>
+
+    </body>
+
+    <script src="javascript/pageDirect.js"></script>
+
+</html>
